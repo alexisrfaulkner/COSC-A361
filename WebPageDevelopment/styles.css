@@ -1,0 +1,161 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    padding: 20px;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.purple-mode{
+    background-color: #2a1a4a;
+    color: #f3e8ff;
+    
+}
+body.purple-mode .card {
+    background-color: #3b2566;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: background-color 0.3s;
+}
+body.purple-mode h1,
+body.purple-mode h2{
+    color: #f9a8d4;
+}
+body.purple-mode input,
+body.purple-mode select {
+    background-color: #4a3080;
+    color: #f3e8ff;
+    border: 1px solid #7c5cbf;
+}
+body.purple-mode input:focus,
+body.purple-mode.select:focus{
+    border-color: #f472b6;
+}
+body.purple-mode button{
+    background-color: #f472b6;
+    color: #2a2a4a;
+}
+body.purple-mode button:hover,
+body.purple-mode button:focus {
+    background-color: #f9a8d4;
+    border: 1px solid #f3e8ff;
+}
+body.purple-mode .task-item {
+    background-color: #4a3080;
+}
+body.purple-mode .error-text {
+    color: #ff8fa3;
+}
+
+/* ==========================================================================
+   2. DASHBOARD LAYOUT (STUDENT WORK REQUIRED)
+   ========================================================================== */
+.dashboard-grid {
+    
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding:1.5rem;
+    /* 
+       TODO: Part 2 Layout Engine
+       Use CSS Flexbox or CSS Grid here to align the two section cards 
+       side-by-side or stacked neatly depending on your grid layout.
+    */
+}
+.form-section{
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.list-section{
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   3. CARD & COMPONENT STYLING
+   ========================================================================== */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Form interactions */
+input:focus, select:focus {
+    border-color: #007bff;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+button:hover,
+button:focus {
+    background-color: #0056b3;
+}
+
+.error-text {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* Dynamic Priority Styling Hints */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-left: 5px solid #6c757d; /* Default gray indicator */
+    border-radius: 4px;
+    list-style: none;
+}
+
+/* Hint: Students can toggle these classes programmatically in JS based on priority selection */
+.task-item.priority-high { border-left-color: #dc3545; }
+.task-item.priority-medium { border-left-color: #ffc107; }
+.task-item.priority-low { border-left-color: #28a745; }
